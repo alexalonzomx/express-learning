@@ -1,0 +1,63 @@
+GET http://localhost:5050/
+###
+POST http://localhost:5050/api/v1/users/register
+Content-Type: application/json
+
+{
+    "username": "testuser",
+    "email": "testuser@example.com",
+    "password": "password123"
+}
+###
+POST http://localhost:5050/api/v1/users/login
+Content-Type: application/json
+
+{
+    "email": "testuser@example.com",
+    "password": "password123"
+}
+###
+
+POST http://localhost:5050/api/v1/users/logout
+Content-Type: application/json
+
+{
+    "email": "testuser@example.com"
+}
+
+### POSTS routes test
+POST http://localhost:5050/api/v1/posts/create
+Content-Type: application/json
+
+{
+    "name": "My Memories",
+    "description": "This is the content of my Memories.",
+    "age": 48
+}
+
+### ANOTHER POST
+
+POST http://localhost:5050/api/v1/posts/create
+Content-Type: application/json
+
+{
+    "name": "My POST TO BE DELETED",
+    "description": "This is the content of my post to be deleted.",
+    "age": 15
+}
+
+###
+GET http://localhost:5050/api/v1/posts/
+###
+PUT http://localhost:5050/api/v1/posts/update/6970fe56cf1c76318871806c
+Content-Type: application/json
+
+{
+    "name": "Updated Memories",
+    "description": "This is the updated content of my Memories.",
+    "age": 49
+}
+
+###
+DELETE http://localhost:5050/api/v1/posts/delete/697105bad5d6f194088c0fc9
+
